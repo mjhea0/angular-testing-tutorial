@@ -19,7 +19,9 @@
     $scope.greeting = "Hello, World!";
     $scope.newText = undefined;
     $scope.changeGreeting = function() {
-      $scope.greeting = $scope.newText;
+      if ($scope.newText !== undefined) {
+        $scope.greeting = $scope.newText;
+      }
     };
   });
 
