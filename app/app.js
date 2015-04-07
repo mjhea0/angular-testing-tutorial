@@ -30,10 +30,12 @@
     $scope.newItem = undefined;
     $scope.items = [1, 2, 3];
     $scope.add = function () {
-      $scope.items.push($scope.newItem);
-      $scope.total = 0;
-      for(var i = 0; i < $scope.items.length; i++){
-        $scope.total += parseInt($scope.items[i]);
+      if(typeof $scope.newItem == 'number') {
+        $scope.items.push($scope.newItem);
+        $scope.total = 0;
+        for(var i = 0; i < $scope.items.length; i++){
+          $scope.total += parseInt($scope.items[i]);
+        }
       }
     };
   });
