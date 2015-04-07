@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" ng-app='myApp'>
+<head>
+  <meta charset="UTF-8">
+  <title>Testing AngularJS!!</title>
+  <!-- styles -->
+  <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="main.css" rel="stylesheet" media="screen">
+</head>
+  <body>
+
+    <div class="container">
+      <h1>Testing AngularJS!!</h1>
+      <br>
+      <ul>
+        <li><a href="#/">Home</a></li>
+        <li><a href="#/one">Say Something</a></li>
+        <li><a href="#/two">Add values</a></li>
+        <li><a href="#/three">Just a modal</a></li>
+        <li><a href="#/four">Load Repos</a></li>
+      </ul>
+      <hr><br>
+      <div ng-view></div>
+    </div>
+
+    <!-- scripts -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-strap/dist/angular-strap.min.js"></script>
+    <script src="bower_components/angular-strap/dist/angular-strap.tpl.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="app.js" type="text/javascript"></script>
+  </body>
+</html>
