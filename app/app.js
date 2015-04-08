@@ -40,8 +40,15 @@
     };
   });
 
-  myApp.controller('TestThreeController', function($scope) {
-    $scope.modal = {title: 'Hi!', content: 'This is a message!'};
+  myApp.controller('TestThreeController', function($scope, $modal) {
+    $scope.modalNumber = 1;
+    var myModal = $modal({scope: $scope, template: 'modal.tpl.html', show: false});
+    $scope.showModal = function() {
+      myModal.$promise.then(myModal.show);
+    };
+    $scope.changeModalText = function() {
+      $scope.modalNumber++;
+      };
   });
 
   myApp.controller('TestFourController', function($scope, $http) {
