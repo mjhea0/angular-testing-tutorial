@@ -142,3 +142,27 @@ describe('TestFourController', function () {
   });
 
 });
+
+describe('routes', function(){
+
+  beforeEach(function () {
+    module('myApp');
+  });
+
+  beforeEach(inject(function (_$httpBackend_, _$route_, _$location_, $rootScope) {
+    $httpBackend = _$httpBackend_;
+    $route = _$route_;
+    $location = _$location_;
+    $scope = $rootScope.$new();
+  }));
+
+  it('should load the one.html template', function(){
+    var route = $route.routes['/one'];
+    $httpBackend.whenGET(route.templateUrl).respond('...');
+    $scope.$apply(function() {
+      $location.path(route.originalPath);
+    });
+    assert.equal($route.current.templateUrl, 'partials/one.html');
+  });
+
+});
