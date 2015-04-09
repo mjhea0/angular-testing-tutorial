@@ -157,12 +157,12 @@ describe('routes', function(){
   }));
 
   it('should load the one.html template', function(){
-    var route = $route.routes['/one'];
-    $httpBackend.whenGET(route.templateUrl).respond('...');
+    $httpBackend.whenGET('partials/one.html').respond('...');
     $scope.$apply(function() {
-      $location.path(route.originalPath);
+      $location.path('/one');
     });
     assert.equal($route.current.templateUrl, 'partials/one.html');
+    assert.equal($route.current.controller, 'TestOneController');
   });
 
 });
