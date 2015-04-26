@@ -18,7 +18,7 @@ describe('TestOneController', function () {
     assert.equal($scope.greeting, "Hello, World!");
   });
 
-  it('clicking the button changes the changes the greeting if text is inputed', function () {
+  it('clicking the button changes the greeting if text is inputed', function () {
     $scope.newText = "Hi!";
     $scope.changeGreeting();
     assert.equal($scope.greeting, "Hi!");
