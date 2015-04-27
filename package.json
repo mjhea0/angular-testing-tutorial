@@ -14,5 +14,6 @@
     "karma-chrome-launcher": "0.1.7",
     "karma-mocha": "0.1.10",
     "protractor": "2.0.0"
-  }
+  },
+  "engines" : { "node" : ">=0.11 <=0.12.2" }
 }
