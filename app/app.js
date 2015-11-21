@@ -42,7 +42,7 @@
 
   myApp.controller('TestThreeController', function($scope, $modal) {
     $scope.modalNumber = 1;
-    var myModal = $modal({scope: $scope, template: 'modal.tpl.html', show: false});
+    var myModal = $modal({scope: $scope, templateUrl: 'modal.tpl.html', show: false});
     $scope.showModal = function() {
       myModal.$promise.then(myModal.show);
     };
