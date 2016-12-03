@@ -1,6 +1,6 @@
 var gulp = require('gulp'),
     connect = require('gulp-connect'),
-    karma = require('karma').server,
+    Server = require('karma').Server,
     protractor = require("gulp-protractor").protractor;
 
 
@@ -12,10 +12,11 @@ gulp.task('connect', function () {
 });
 
 gulp.task('unit', function (done) {
-  karma.start({
+  var server = new Server({
     configFile: __dirname + '/tests/karma.conf.js',
     singleRun: true
   }, done);
+  server.start();
 });
 
 gulp.task('e2e', function(done) {
