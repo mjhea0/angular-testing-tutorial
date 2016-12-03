@@ -3,6 +3,15 @@
   "version": "0.0.0",
   "author": "Michael Herman <michael@mherman.org> (http://mherman.org)",
   "license": "ISC",
+  "scripts": {
+    "start": "node node_modules/gulp/bin/gulp.js",
+    "postinstall": "npm run bower-install&&npm run driver-install",
+    "bower-install": "node node_modules/bower/bin/bower install",
+    "driver-install": "node node_modules/.bin/webdriver-manager update --standalone",
+    "driver": "node node_modules/.bin/webdriver-manager start",
+    "unit": "node node_modules/gulp/bin/gulp.js unit",
+    "e2e": "node node_modules/gulp/bin/gulp.js e2e"
+  },
   "dependencies": {},
   "devDependencies": {
     "chai": "3.4.1",
